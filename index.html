@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>可为 AI｜实体行业 AI 内容引擎</title>
+  <meta name="description" content="可为 AI 专注实体行业内容体系搭建，提供内容诊断、行业 SOP、AI 内容生产、素材清单、审核流程和交付工作台。" />
+  <style>
+    :root{
+      --bg:#f5efe4;
+      --bg2:#fbf7ef;
+      --ink:#162017;
+      --muted:#6f756b;
+      --green:#173f2a;
+      --green2:#245d3c;
+      --line:#ded4c1;
+      --paper:#fffaf0;
+      --amber:#d5902f;
+      --amber2:#f3cf8a;
+      --purple:#ebe3ff;
+      --blue:#e3eefc;
+      --mint:#e3f3df;
+      --rose:#f6e4da;
+      --shadow:0 24px 70px rgba(32,35,24,.11);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Inter,system-ui,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(213,144,47,.16), transparent 28%),
+        radial-gradient(circle at 86% 4%, rgba(36,93,60,.13), transparent 30%),
+        linear-gradient(180deg,var(--bg),#f8f0e2 42%,#f3ead9 100%);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
+    .nav{
+      position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);
+      background:rgba(245,239,228,.78);border-bottom:1px solid rgba(222,212,193,.7)
+    }
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em}
+    .logo{width:38px;height:38px;border-radius:12px;background:var(--green);color:#f5efe4;display:grid;place-items:center;font-family:Georgia,serif;font-size:18px;box-shadow:0 10px 24px rgba(23,63,42,.18)}
+    .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;color:#334035}
+    .nav-links small{display:block;color:#96917f;font-size:10px;line-height:1;margin-top:1px;text-transform:uppercase;letter-spacing:.08em}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;border:1px solid var(--green);font-weight:700;transition:.22s ease;background:transparent}
+    .btn.primary{background:var(--green);color:#fffaf0;box-shadow:0 14px 36px rgba(23,63,42,.22)}
+    .btn:hover{transform:translateY(-2px)}
+    .hero{padding:82px 0 90px}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:58px;align-items:center}
+    .eyebrow{color:var(--green2);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:13px;margin-bottom:18px}
+    h1,h2,h3{margin:0;line-height:1.08;text-wrap:pretty}
+    h1{font-family:"Songti SC","Noto Serif SC",STSong,Georgia,serif;font-size:clamp(46px,7vw,86px);letter-spacing:-.045em;font-weight:900}
+    h1 .accent{color:var(--amber);position:relative;white-space:nowrap}
+    .subtitle-en{font-family:Georgia,serif;font-style:italic;font-size:19px;color:#8a7f69;margin:24px 0 12px}
+    .lead{font-size:19px;color:#444b42;max-width:620px;margin:0 0 30px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.hero-note{font-size:13px;color:var(--muted);margin-top:16px}
+    .dashboard-wrap{position:relative;min-height:480px}.orb{position:absolute;border-radius:999px;filter:blur(.2px);opacity:.95}.orb.one{width:86px;height:86px;background:var(--amber2);right:24px;top:18px}.orb.two{width:58px;height:58px;background:#b8d8bc;left:24px;bottom:42px}.board{
+      position:relative;margin:54px auto 0;width:min(480px,100%);border-radius:34px;background:#111913;color:#fff8ed;padding:24px;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);overflow:hidden
+    }
+    .board:before{content:"";position:absolute;inset:auto -80px -110px auto;width:260px;height:260px;background:radial-gradient(circle,rgba(213,144,47,.28),transparent 64%)}
+    .mac{display:flex;gap:7px;margin-bottom:22px}.dot{width:11px;height:11px;border-radius:50%;background:#e35d4f}.dot:nth-child(2){background:#e4b64b}.dot:nth-child(3){background:#62bd71}
+    .board-title{font-size:14px;color:#d7dfd0;margin-bottom:20px;display:flex;justify-content:space-between;gap:12px}.status{color:#f1c36e}.task{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-top:1px solid rgba(255,255,255,.1);font-size:15px}.task span:last-child{color:#bcd0c1;font-size:13px}.progress-label{display:flex;justify-content:space-between;margin:20px 0 8px;font-size:13px;color:#d7dfd0}.bar{height:10px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}.bar i{display:block;width:74%;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--amber),#f2d99c)}.floating{position:absolute;right:-20px;bottom:58px;background:#fff8ed;color:var(--green);padding:12px 16px;border-radius:18px;box-shadow:0 18px 46px rgba(0,0,0,.18);font-weight:800;font-size:14px}.floating.left{right:auto;left:-16px;bottom:136px;color:#6e4d0b}
+    section{padding:92px 0;border-top:1px solid rgba(222,212,193,.62)}.section-head{text-align:center;max-width:760px;margin:0 auto 42px}.kicker{font-family:Georgia,serif;font-style:italic;color:#9a8d74;margin-bottom:10px}.section-head h2{font-family:"Songti SC","Noto Serif SC",STSong,Georgia,serif;font-size:clamp(34px,4.5vw,58px);letter-spacing:-.035em}.section-head p{color:var(--muted);font-size:17px;margin:18px auto 0}
+    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.pain,.service,.case-card,.faq-item{background:rgba(255,250,240,.72);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 12px 34px rgba(38,37,24,.04)}.pain .emoji{font-size:34px;margin-bottom:16px}.pain h3,.service h3{font-size:22px;margin-bottom:10px}.pain p,.service p,.case-card p,.faq-item p{color:var(--muted);margin:0}.solution{background:var(--green);color:#fff8ed;border-radius:38px;padding:46px;display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:center;box-shadow:var(--shadow)}.solution h2{font-family:"Songti SC",serif;font-size:46px;letter-spacing:-.03em}.solution p{color:#d7dfd0}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.chip{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);border-radius:999px;padding:8px 13px;color:#fff1d8;font-size:13px}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service .num{font-family:Georgia,serif;color:var(--amber);font-size:32px;margin-bottom:14px}.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.case-card{padding:0;overflow:hidden;transition:.22s ease;cursor:pointer}.case-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.case-visual{height:170px;display:grid;place-items:center;font-size:54px;border-bottom:1px solid var(--line)}.case-visual.mint{background:var(--mint)}.case-visual.rose{background:var(--rose)}.case-visual.blue{background:var(--blue)}.case-body{padding:24px}.tag{display:inline-flex;border:1px solid #cfd9cb;background:#f8fbf2;color:var(--green2);border-radius:999px;padding:5px 11px;font-size:12px;font-weight:800;margin-bottom:14px}.case-card h3{font-size:24px;margin-bottom:6px}.meta{font-size:13px;color:#8c8f84;margin-bottom:14px}.case-link{margin-top:20px;color:var(--green2);font-weight:800}.process{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{background:#fff8ed;border:1px solid var(--line);border-radius:24px;padding:22px;min-height:180px}.step b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff8ed;margin-bottom:16px}.step h3{font-size:18px;margin-bottom:8px}.step p{font-size:14px;color:var(--muted);margin:0}.faq{max-width:920px;margin:0 auto;display:grid;gap:14px}.faq-item h3{font-size:19px;margin-bottom:8px}.cta{padding:92px 0;background:#111913;color:#fff8ed}.cta-card{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}.cta h2{font-family:"Songti SC",serif;font-size:50px;letter-spacing:-.035em}.cta p{color:#cbd5ca;margin:16px 0 0}.footer{padding:34px 0;color:#807969;font-size:14px}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.mobile-only{display:none}
+    @media (max-width:900px){.nav-links{display:none}.hero{padding-top:52px}.hero-grid,.solution,.cta-card{grid-template-columns:1fr}.pain-grid,.service-grid,.cases-grid{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.floating{right:8px}.floating.left{left:8px}.board{margin-top:28px}.mobile-only{display:block}section{padding:68px 0}}
+    @media (max-width:560px){.container{width:min(100% - 28px,1160px)}h1{font-size:44px}.lead{font-size:16px}.process{grid-template-columns:1fr}.solution{padding:30px}.solution h2,.cta h2{font-size:34px}.case-visual{height:136px}.nav-inner{height:66px}.hero-actions .btn{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top"><span class="logo">K</span><span>可为 AI</span></a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#services">服务<small>Services</small></a>
+        <a href="#cases">案例<small>Cases</small></a>
+        <a href="#process">流程<small>Process</small></a>
+        <a href="#faq">FAQ<small>Questions</small></a>
+      </nav>
+      <a class="btn primary" href="#contact">预约诊断</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">实体行业 AI 内容引擎</div>
+          <h1>不是再多一个 <span class="accent">AI 工具</span>，<br/>而是一套内容体系。</h1>
+          <p class="subtitle-en">Build the content system, not another prompt box.</p>
+          <p class="lead">可为 AI 帮实体商家、代运营公司和本地服务商，搭建从内容诊断、行业 SOP、选题脚本、素材清单到审核交付的完整内容生产流程。</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact">预约内容诊断 →</a>
+            <a class="btn" href="#cases">查看服务案例</a>
+          </div>
+          <div class="hero-note">标准服务不承诺流量、线索或成交结果。我们交付的是系统、SOP、培训和内容能力。</div>
+        </div>
+        <div class="dashboard-wrap" aria-hidden="true">
+          <span class="orb one"></span><span class="orb two"></span>
+          <div class="board">
+            <div class="mac"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="board-title"><span>可为 AI · 内容体系看板</span><span class="status">运行中</span></div>
+            <div class="task"><strong>客户内容诊断</strong><span>✅ 完成</span></div>
+            <div class="task"><strong>行业 SOP 匹配</strong><span>✅ 完成</span></div>
+            <div class="task"><strong>选题池生成</strong><span>✅ 30 条</span></div>
+            <div class="task"><strong>脚本 / 图文生产</strong><span>🔄 生成中</span></div>
+            <div class="task"><strong>客户审核</strong><span>待确认</span></div>
+            <div class="progress-label"><span>首批交付进度</span><strong>74%</strong></div>
+            <div class="bar"><i></i></div>
+          </div>
+          <div class="floating left">本周内容计划 12 条</div>
+          <div class="floating">待审核 5 条</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Sound familiar?</div>
+          <h2>问题不是不会用 AI，<br/>而是没有内容体系。</h2>
+        </div>
+        <div class="pain-grid">
+          <article class="pain"><div class="emoji">🧩</div><h3>内容零散</h3><p>知道要发短视频、小红书，但选题、素材、脚本、发布节奏都靠临时想，做几条就断。</p></article>
+          <article class="pain"><div class="emoji">🌀</div><h3>工具很多</h3><p>AI 文案、数字人、混剪工具都试过，但没人把它们串成一套可执行的业务流程。</p></article>
+          <article class="pain"><div class="emoji">📦</div><h3>交付难复制</h3><p>服务商每个客户都从零策划，经验在老员工脑子里，新人接不上，客户交付记录也很散。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="solution">
+          <div>
+            <div class="kicker">The Answer</div>
+            <h2>别的工具生成内容，<br/>可为 AI 搭建体系。</h2>
+          </div>
+          <div>
+            <p>我们把实体行业内容生产拆成可执行流程：先诊断客户适合做什么，再匹配行业 SOP，生成选题、脚本、图文和素材清单，最后进入审核、交付和复盘。</p>
+            <div class="chips"><span class="chip">内容诊断</span><span class="chip">行业 SOP</span><span class="chip">选题池</span><span class="chip">脚本图文</span><span class="chip">素材清单</span><span class="chip">审核工作台</span></div>
+          </div>
+        </div>
+        <div style="height:28px"></div>
+        <div class="service-grid">
+          <article class="service"><div class="num">01</div><h3>实体商家内容体系搭建</h3><p>适合旅游、家装、美容、本地生活等行业，交付内容诊断、栏目规划、首批选题、脚本图文和素材清单。</p></article>
+          <article class="service"><div class="num">02</div><h3>代运营公司交付提效</h3><p>用多客户工作台、行业 SOP 和 AI 内容生产流程，减少每个客户从零策划的人工成本。</p></article>
+          <article class="service"><div class="num">03</div><h3>渠道合作与服务商赋能</h3><p>提供销售资料、客户诊断支持、标准交付流程、渠道培训和成交后的交付支持。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Selected Cases</div>
+          <h2>可以先这样讲案例。</h2>
+          <p>以下为官网首版案例卡片结构，后续可以替换为真实客户、脱敏截图和交付成果。</p>
+        </div>
+        <div class="cases-grid">
+          <article class="case-card">
+            <div class="case-visual mint">✈️</div>
+            <div class="case-body"><span class="tag">旅游行业</span><h3>旅游内容体系搭建</h3><div class="meta">小红书 · 短视频 · 素材清单</div><p>梳理产品卖点、用户决策路径和内容栏目，生成首批选题、脚本和素材拍摄清单，让团队从零散发布转向固定内容生产流程。</p><div class="case-link">查看详情 ↓</div></div>
+          </article>
+          <article class="case-card">
+            <div class="case-visual rose">🏠</div>
+            <div class="case-body"><span class="tag">家装行业</span><h3>家装短视频内容系统</h3><div class="meta">案例内容 · 设计师 IP · 脚本模板</div><p>围绕设计案例、施工过程、业主顾虑和装修避坑，搭建内容栏目和脚本模板，持续输出有信任感的专业内容。</p><div class="case-link">查看详情 ↓</div></div>
+          </article>
+          <article class="case-card">
+            <div class="case-visual blue">🗂️</div>
+            <div class="case-body"><span class="tag">服务商</span><h3>客户交付工作台</h3><div class="meta">多客户管理 · SOP · AI 内容生产</div><p>把客户诊断、选题生成、素材收集、内容审核和交付记录标准化，降低服务商多客户交付的人工损耗。</p><div class="case-link">查看详情 ↓</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head"><div class="kicker">How it works</div><h2>合作从一次内容诊断开始。</h2></div>
+        <div class="process">
+          <article class="step"><b>1</b><h3>内容诊断</h3><p>了解行业、产品、客户、账号和素材情况。</p></article>
+          <article class="step"><b>2</b><h3>方案确认</h3><p>明确内容方向、行业 SOP、交付范围和服务边界。</p></article>
+          <article class="step"><b>3</b><h3>系统开通</h3><p>建立客户档案、内容项目空间和素材任务区。</p></article>
+          <article class="step"><b>4</b><h3>首批生产</h3><p>生成选题、脚本、图文、素材清单和发布计划。</p></article>
+          <article class="step"><b>5</b><h3>审核复盘</h3><p>客户审核发布，阶段复盘后进入下一轮优化。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head"><div class="kicker">FAQ</div><h2>提前说清楚，合作更省心。</h2></div>
+        <div class="faq">
+          <article class="faq-item"><h3>可为 AI 是代运营吗？</h3><p>不是。标准服务提供系统、SOP、培训和内容生产方法支持，客户负责账号发布、私信评论承接和线下履约。</p></article>
+          <article class="faq-item"><h3>能保证流量和成交吗？</h3><p>不能承诺具体结果。内容效果与行业、产品、素材、账号基础、执行频率和客户承接能力有关。</p></article>
+          <article class="faq-item"><h3>客户需要配合什么？</h3><p>需要提供真实产品信息、案例、素材、审核意见，并安排人员学习系统、确认内容和执行发布。</p></article>
+          <article class="faq-item"><h3>和普通 AI 工具有啥区别？</h3><p>普通工具解决单次生成，可为 AI 解决内容体系搭建、持续生产流程和服务商交付管理。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container cta-card">
+        <div><h2>先做一次内容诊断。</h2><p>不用先聊复杂系统。先看行业、产品、素材和账号现状，判断是否适合搭建内容体系。</p></div>
+        <a class="btn primary" style="background:#fff8ed;color:var(--green);border-color:#fff8ed" href="mailto:hello@kewei.ai">预约诊断 →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>可为 AI</strong> · 实体行业 AI 内容引擎</div>
+      <div>内容诊断 / 行业 SOP / AI 内容生产 / 交付工作台</div>
+    </div>
+  </footer>
+</body>
+</html>
